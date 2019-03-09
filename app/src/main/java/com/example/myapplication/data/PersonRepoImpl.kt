@@ -15,5 +15,5 @@ class PersonRepoImpl @Inject constructor() : PersonRepo {
             AnyHuman(),
             AnyHuman()
         )
-    ).delay(5,TimeUnit.SECONDS)
+    )
 }

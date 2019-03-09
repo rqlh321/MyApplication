@@ -2,6 +2,7 @@ package com.example.myapplication.presentation.candidates
 
 import android.os.Bundle
 import com.example.myapplication.R
+import com.example.myapplication.core.person.AnyHuman
 import com.example.myapplication.core.person.Person
 import dagger.android.DaggerActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,9 +21,10 @@ class CandidatesActivity : DaggerActivity(), CandidatesContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         output.setOnClickListener {
-            presenter.start()
+            output.text = ""
+            presenter.select(AnyHuman())
         }
-
+        presenter.start()
     }
 
     override fun onDestroy() {

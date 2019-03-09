@@ -1,11 +1,10 @@
 package com.example.myapplication.use_cases
 
 import com.example.myapplication.core.person.Person
-import io.reactivex.Single
+import io.reactivex.Observable
 
 interface AppropriateCandidatesUseCase {
 
-
-    fun checkForAppropriateCandidates(): Single<List<Person>>
+    fun execute(reload: Boolean = false): Observable<List<Person>>
 
 }
